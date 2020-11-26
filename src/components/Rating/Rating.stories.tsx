@@ -1,33 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
+import {Meta} from '@storybook/react/types-6-0';
+import {Rating, RatingValueType} from "./Rating";
 
-type RatingPropsType = {
-    value: RatingValueType
-    onClick:(value:RatingValueType)=>void
-}
-type StarPropsType = {
-    selected: boolean
-    onClick:(value:RatingValueType)=>void
-    value: RatingValueType
-}
-export type RatingValueType = 0|1|2|3|4|5
+export default {
+    title: 'Rating stories',
+    component: Rating,
+    argTypes: {
+        backgroundColor: {control: 'color'},
+    },
+} as Meta;
 
-
-export function Rating(props: RatingPropsType) {
-
-    return (
-        <div>
-            <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
-            <Star selected={props.value > 1} onClick={props.onClick} value={2}/>
-            <Star selected={props.value > 2} onClick={props.onClick} value={3}/>
-            <Star selected={props.value > 3} onClick={props.onClick} value={4}/>
-            <Star selected={props.value > 4} onClick={props.onClick} value={5}/>
-        </div>
-    )
-}
-
-function Star(props: StarPropsType) {
-    console.log("Star rendering")
-    return <span onClick={() => {props.onClick(props.value)}}>
-        { props.selected ? <b>star </b> : "star " }
-    </span>
+export const EmptyRating = () => <Rating value={0} onClick={x => x}/>
+export const Rating1 = () => <Rating value={1} onClick={x => x}/>
+export const Rating2 = () => <Rating value={2} onClick={x => x}/>
+export const Rating3 = () => <Rating value={3} onClick={x => x}/>
+export const Rating4 = () => <Rating value={4} onClick={x => x}/>
+export const Rating5 = () => <Rating value={5} onClick={x => x}/>
+export const RatingChanging = () => {
+    const [rating, setRating] = useState<RatingValueType>(3)
+    return <Rating value={rating} onClick={setRating}/>
 }

@@ -2,8 +2,8 @@ import React, {useState} from "react";
 
 type AccordionPropsType= {
    titleValue: string
-
 }
+
 type AccordionTitlePropsType= {
     title: string
     onClick: () => void
