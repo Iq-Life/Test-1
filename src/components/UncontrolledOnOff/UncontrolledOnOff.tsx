@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import './OnOff.css'
 
 type onOffType ={
     onChange : (on:boolean)=>void
+    defaultOn?: boolean
 }
 
-export function OnnOff(props:onOffType) {
+export function UncontrolledOnOff(props:onOffType) {
 
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false )
 
     const onStyle = {
         border: "1px solid black",

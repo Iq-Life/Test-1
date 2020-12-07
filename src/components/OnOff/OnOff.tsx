@@ -1,19 +1,18 @@
 import React, {useState} from 'react';
-import './OnOff.css'
 
 type OnOffType ={
     on: boolean
     setOff: (on:boolean) => void
 }
 
-function UnOnOff(props:OnOffType) {
+export function OnOff(props:OnOffType) {
 
     const onStyle = {
         border: "1px solid black",
         width: "30px",
         height: "30px",
         backgroundColor: props.on ? "green" : "white",
-        padding: "2px",
+        padding: "5px",
         display: "inline-block"
     }
     const offStyle = {
@@ -21,7 +20,7 @@ function UnOnOff(props:OnOffType) {
         width: "30px",
         height: "30px",
         backgroundColor: props.on ? "white" : "red",
-        padding: "2px",
+        padding: "5px",
         display: "inline-block",
         marginLeft: "2px"
 
@@ -50,5 +49,4 @@ function UnOnOff(props:OnOffType) {
     )
 }
 
-export default UnOnOff;
 

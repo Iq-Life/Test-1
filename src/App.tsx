@@ -3,10 +3,11 @@ import './App.css';
 import {TodoList} from "./TodoList";
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledRating} from './components/Rating/UncontrolledRating';
-import {OnnOff} from "./components/OnOff/OnnOff";
-import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
-import UnOnOff from "./components/UncontrolledOnOff/UnOnOff";
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {OnOff} from "./components/OnOff/OnOff";
+import {callback} from "./components/UncontrolledRating/UncontrolledRating.stories";
 
 export type TaskType = {
     id: number
@@ -48,11 +49,11 @@ function App() { //JSX
                 <Rating value={ratingValue} onClick={setRatingValue}/>
                 <h2>Article 2</h2>
                 <UncontrolledAccordion titleValue={"UnMenu"}/>
-                <UncontrolledRating value={0}/>
+                <UncontrolledRating defaultValue={0} onChange={callback}/>
             </div>
             <div>
-                <OnnOff onChange={setSwitchOff}/> {switchOn.toString()}
-                <UnOnOff on={switchOn} setOff={setSwitchOff}/>
+                <UncontrolledOnOff onChange={setSwitchOff}/> {switchOn.toString()}
+                <OnOff on={switchOn} setOff={setSwitchOff}/>
             </div>
         </div>
     );
