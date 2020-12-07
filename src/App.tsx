@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
 import {TodoList} from "./TodoList";
-import Accordion from "./components/Accordion/Accordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
-import OnOff from "./components/OnOff/OnOff";
+import {OnnOff} from "./components/OnOff/OnnOff";
 import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 import UnOnOff from "./components/UncontrolledOnOff/UnOnOff";
 
@@ -37,10 +37,7 @@ function App() { //JSX
 
     return (
         <div className="App">
-            {/*<div>
-            <TodoList title={"What to learn"} task={tasks1}/>
-            <TodoList title={"Songs"} task={tasks2}/>
-            </div>*/}
+
             <div>
                 {/*<PageTitle title={"This is APP component"}/>
                 <PageTitle title={"My friends"}/>*/}
@@ -54,7 +51,7 @@ function App() { //JSX
                 <UncontrolledRating value={0}/>
             </div>
             <div>
-                <OnOff  onChange={setSwitchOff}/> {switchOn.toString()}
+                <OnnOff onChange={setSwitchOff}/> {switchOn.toString()}
                 <UnOnOff on={switchOn} setOff={setSwitchOff}/>
             </div>
         </div>

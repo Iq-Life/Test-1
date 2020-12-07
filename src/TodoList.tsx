@@ -1,11 +1,9 @@
 import React from "react";
 import {TaskType} from "./App";
-import OnOff from "./components/OnOff/OnOff";
 
 type PropsType = {
     title: string
     task: Array<TaskType>
-    on: boolean
 }
 
 

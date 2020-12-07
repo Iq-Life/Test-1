@@ -3,7 +3,7 @@ import {Meta} from '@storybook/react/types-6-0';
 import {Rating, RatingValueType} from "./Rating";
 
 export default {
-    title: 'Rating stories',
+    title: 'Rating',
     component: Rating,
     argTypes: {
         backgroundColor: {control: 'color'},

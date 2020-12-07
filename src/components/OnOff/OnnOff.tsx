@@ -5,7 +5,7 @@ type onOffType ={
     onChange : (on:boolean)=>void
 }
 
-function OnOff(props:onOffType) {
+export function OnnOff(props:onOffType) {
 
     let [on, setOn] = useState(false)
 
@@ -57,6 +57,4 @@ function OnOff(props:onOffType) {
         </div>
     )
 }
-
-export default OnOff;
 
