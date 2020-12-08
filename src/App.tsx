@@ -35,7 +35,6 @@ function App() { //JSX
         {id: 3, title: "Yo!", isDone: true},
     ];
 
-
     return (
         <div className="App">
 
@@ -45,7 +44,11 @@ function App() { //JSX
                 <h2>Article 1</h2>
                 <Accordion titleValue={"My menu"}
                            collapsed={accordionCollapsed}
-                           onClick={setAccordionCollapsed}/>
+                           onClick={setAccordionCollapsed}
+                           items={[ {title:"Pasha", value:1}, {title:"Dimych", value:2},
+                               {title:"Anton", value:3}, {title:"Kirill", value:4} ]}
+                           click={()=> console.log('some item was clicked')}
+                />
                 <Rating value={ratingValue} onClick={setRatingValue}/>
                 <h2>Article 2</h2>
                 <UncontrolledAccordion titleValue={"UnMenu"}/>
