@@ -8,22 +8,22 @@ export type AccordionPropsType = {
     click: (value:any) => void
 }
 
+export const AccordionMemo = React.memo(Accordion)
 export function Accordion(props: AccordionPropsType) {
     return <div>
-        <AccordionTitle title={props.titleValue}
+        <AccordionTitleMemo title={props.titleValue}
                         onClick={props.onClick}
                         collapsed={props.collapsed}
         />
-        {!props.collapsed === false && <AccordionBody items={props.items} click={props.click}/>}
+        {!props.collapsed === false && <AccordionBodyMemo items={props.items} click={props.click}/>}
     </div>
 }
-
 export type AccordionTitlePropsType = {
     title: string
     onClick: (collapsed: boolean) => void
     collapsed: boolean
 }
-
+export const AccordionTitleMemo= React.memo(AccordionTitle)
 export function AccordionTitle(props: AccordionTitlePropsType) {
     return <>
         <h3 onClick={() => {props.onClick(!props.collapsed)}}>-- {props.title} --</h3>
@@ -38,7 +38,7 @@ export type ItemType = {
     title: string
     value: any
 }
-
+export const AccordionBodyMemo= React.memo(AccordionBody)
 export function AccordionBody(props: AccordionBodyPropsType) {
     return <ul>{props.items.map((i, index) => <li
                 onClick={() => {props.click(i.value)}}
