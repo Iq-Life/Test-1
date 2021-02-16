@@ -3,6 +3,7 @@ import {Meta} from "@storybook/react/types-6-0";
 export default {
     title: 'React.memo demo'
 } as Meta;
+
 const NewMessagesCounter = (props: { count: number }) => {
     return <div>{props.count}</div>
 }

@@ -34,10 +34,12 @@ export type AccordionBodyPropsType = {
     items: ItemType[]
     click: (value:any) => void
 }
+
 export type ItemType = {
     title: string
     value: any
 }
+
 export const AccordionBodyMemo= React.memo(AccordionBody)
 export function AccordionBody(props: AccordionBodyPropsType) {
     return <ul>{props.items.map((i, index) => <li
